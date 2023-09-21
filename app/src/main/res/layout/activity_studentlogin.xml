@@ -2,13 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/back"
-    tools:context=".STAFFLOGIN">
+    tools:context=".STUDENTLOGIN">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -30,13 +29,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Staff Login"
+                android:text="Student login"
                 android:textAlignment="center"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/staffName"
+                android:id="@+id/studentName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -51,7 +50,7 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
-                android:id="@+id/staffPass"
+                android:id="@+id/studentPass"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
@@ -66,10 +65,11 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/stuloginButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
+                android:onClick="openStudent"
                 android:text="login"
                 android:textSize="18sp" />
 
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
         android:padding="8dp"
-        android:text="sign up"
+        android:text="forgot password"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
