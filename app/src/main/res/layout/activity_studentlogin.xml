@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/back"
-    tools:context=".STUDENTLOGIN">
+    tools:context=".studentlogin">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -65,11 +65,10 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <Button
-                android:id="@+id/stuloginButton"
+                android:id="@+id/studentloginButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:onClick="openStudent"
                 android:text="login"
                 android:textSize="18sp" />
 
