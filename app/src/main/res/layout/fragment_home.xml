@@ -104,7 +104,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/btn_star" />
+                    android:src="@drawable/attendence_logo" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -133,7 +133,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/btn_star" />
+                    android:src="@drawable/library_record_logo" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -155,7 +155,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/notes3" />
+                    android:src="@drawable/notes" />
 
                 <TextView
                     android:id="@+id/textView4"
