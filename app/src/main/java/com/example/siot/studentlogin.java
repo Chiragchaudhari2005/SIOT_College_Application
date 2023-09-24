@@ -22,6 +22,7 @@ public class studentlogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), MainActivity.class);
+                intent.putExtra("Student login",1);
                 startActivity(intent);
             }
         });

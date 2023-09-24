@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 public class HomeFragment extends Fragment {
 
+    public int selectedActivity;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -47,12 +48,26 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        Intent intent = getActivity().getIntent();
+        selectedActivity = intent.getIntExtra("Selected activity", (int) 0);
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_home, container, false);
+
+        if (selectedActivity == 0)
+        {
+            return inflater.inflate(R.layout.staff_homescreen, container, false);
+        }
+        else
+        {
+            return inflater.inflate(R.layout.student_homescreen, container, false);
+        }
+
     }
 }

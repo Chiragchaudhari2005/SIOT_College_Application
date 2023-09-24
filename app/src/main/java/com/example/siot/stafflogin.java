@@ -22,6 +22,7 @@ public class stafflogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), MainActivity.class);
+                intent.putExtra("Staff login",0);
                 startActivity(intent);
             }
         });
