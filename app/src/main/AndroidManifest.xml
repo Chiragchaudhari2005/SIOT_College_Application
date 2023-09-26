@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SIOT"
         tools:targetApi="31">
         <activity
+            android:name=".STAFF_ATTENDENCE"
+            android:exported="false" />
+        <activity
             android:name=".studentlogin"
             android:exported="false" />
         <activity
@@ -27,15 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".staff_homescreen"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
