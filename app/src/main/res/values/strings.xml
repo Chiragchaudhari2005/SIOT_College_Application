@@ -3,4 +3,8 @@
     <string name="username" />
     <string name="staff">STAFF</string>
     <string name="student">STUDENT</string>
+    <string name="student_info">Student info</string>
+    <string name="attendence">Attendence</string>
+    <string name="library_record">Library record</string>
+    <string name="notes">Notes</string>
 </resources>
