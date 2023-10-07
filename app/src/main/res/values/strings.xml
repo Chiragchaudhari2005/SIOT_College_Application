@@ -9,4 +9,6 @@
     <string name="notes">Notes</string>
     <string name="select_year">Select Year</string>
     <string name="add_new_class">Add New Class</string>
+    <string name="name">Name</string>
+    <string name="Name" />
 </resources>
