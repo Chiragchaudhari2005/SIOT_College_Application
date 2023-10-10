@@ -1,14 +1,13 @@
 package com.example.siot;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class STAFF_ATTENDENCE extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class student_info extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_staff_attendence);
+        setContentView(R.layout.activity_studentinfo);
     }
 }
