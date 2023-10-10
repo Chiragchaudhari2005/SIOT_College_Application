@@ -5,15 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9cd3db"
     tools:context=".HomeFragment">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/siot_head"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/head_bg"
+        android:src="@drawable/siot_logo_400_40_removebg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,6 +29,7 @@
         android:layout_marginBottom="50dp"
         android:autoStart="true"
         android:flipInterval="2000"
+        android:background="@drawable/button_bg"
         android:inAnimation="@android:anim/slide_in_left"
         android:outAnimation="@android:anim/slide_out_right"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"

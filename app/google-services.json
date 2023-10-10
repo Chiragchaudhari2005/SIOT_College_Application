@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "398619631484",
+    "project_id": "siot-3878e",
+    "storage_bucket": "siot-3878e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398619631484:android:8cac538ba90fb10e30cef9",
+        "android_client_info": {
+          "package_name": "com.example.siot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxK3YZaeEb4p27b9Dypsco6YbYqG6fNTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -35,7 +35,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
+        <activity
+            android:name=".notes_staff1"
+            android:exported="false" />
     </application>
+
 
 </manifest>
