@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Sign Up"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Name:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="26dp"
+                tools:layout_editor_absoluteY="151dp" />
+
+            <EditText
+                android:id="@+id/name_edtxt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="258dp"
+                tools:layout_editor_absoluteY="202dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/enrollment_tv"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Enrollment no:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="212dp" />
+
+            <EditText
+                android:id="@+id/enrollment_edtxt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="258dp"
+                tools:layout_editor_absoluteY="267dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/branch_tv"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Branch:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="280dp" />
+
+            <EditText
+                android:id="@+id/branch_edtxt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="258dp"
+                tools:layout_editor_absoluteY="334dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/email_tv"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Email:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="33dp"
+                tools:layout_editor_absoluteY="346dp" />
+
+            <EditText
+                android:id="@+id/email_edtxt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="258dp"
+                tools:layout_editor_absoluteY="401dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Birthdate:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="408dp" />
+
+            <EditText
+                android:id="@+id/birthdate_edtxt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="258dp"
+                tools:layout_editor_absoluteY="151dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Phone:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="29dp"
+                tools:layout_editor_absoluteY="472dp" />
+
+            <EditText
+                android:id="@+id/phone_edtxt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:padding="8dp"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="258dp"
+                tools:layout_editor_absoluteY="472dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/registerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/login_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:padding="8dp"
+        android:text="Already have an account? Login"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerbtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
