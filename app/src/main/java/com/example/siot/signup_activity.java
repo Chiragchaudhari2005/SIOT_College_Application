@@ -32,12 +32,6 @@ public class signup_activity extends AppCompatActivity {
         String Birthdate = birthdate_edtxt.getText().toString();
         String phone = phone_edtxt.getText().toString();
 
-        registerbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
 
 
 

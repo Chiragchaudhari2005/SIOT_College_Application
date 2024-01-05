@@ -48,8 +48,9 @@
             <EditText
                 android:id="@+id/name_edtxt"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:padding="8dp"
+                android:text="hi"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="258dp"
                 tools:layout_editor_absoluteY="202dp" />
@@ -76,9 +77,10 @@
             <EditText
                 android:id="@+id/enrollment_edtxt"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:inputType="number"
                 android:padding="8dp"
+                android:text="hi"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="258dp"
                 tools:layout_editor_absoluteY="267dp" />
@@ -105,8 +107,9 @@
             <EditText
                 android:id="@+id/branch_edtxt"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:padding="8dp"
+                android:text="hi"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="258dp"
                 tools:layout_editor_absoluteY="334dp" />
@@ -132,9 +135,10 @@
             <EditText
                 android:id="@+id/email_edtxt"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
+                android:text="hi"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="258dp"
                 tools:layout_editor_absoluteY="401dp" />
@@ -160,9 +164,10 @@
             <EditText
                 android:id="@+id/birthdate_edtxt"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:inputType="text"
                 android:padding="8dp"
+                android:text="hi"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="258dp"
                 tools:layout_editor_absoluteY="151dp" />
@@ -188,12 +193,13 @@
             <EditText
                 android:id="@+id/phone_edtxt"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:inputType="phone"
                 android:padding="8dp"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteX="258dp"
-                tools:layout_editor_absoluteY="472dp" />
+                tools:layout_editor_absoluteY="472dp"
+                android:text="hi" />
         </LinearLayout>
     </LinearLayout>
 

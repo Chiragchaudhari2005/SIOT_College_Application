@@ -10,7 +10,7 @@ public class student_homescreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.student_homescreen);
+        setContentView(R.layout.demo);
 
         Intent intent = getIntent();
     }

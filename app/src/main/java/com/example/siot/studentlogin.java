@@ -21,7 +21,7 @@ public class studentlogin extends AppCompatActivity {
         studentloginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                Intent intent = new Intent(v.getContext(), student_homescreen.class);
                 intent.putExtra("Student login",1);
                 startActivity(intent);
             }
