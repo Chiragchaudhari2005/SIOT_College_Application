@@ -13,7 +13,106 @@
         android:theme="@style/Theme.SIOT"
         tools:targetApi="31">
         <activity
-            android:name=".student_homescreen"
+            android:name=".auto_engg_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".auto_engg_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".auto_engg_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".auto_engg_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".auto_engg_sem2"
+            android:exported="false" />
+        <activity
+            android:name=".auto_engg_sem1"
+            android:exported="false" />
+        <activity
+            android:name=".auto_engg_semesters"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_sem2"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_sem1"
+            android:exported="false" />
+        <activity
+            android:name=".civil_engg_semesters"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_sem2"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_sem1"
+            android:exported="false" />
+        <activity
+            android:name=".mech_engg_semesters"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_sem2"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_sem1"
+            android:exported="false" />
+        <activity
+            android:name=".comp_engg_semesters"
+            android:exported="false" />
+        <activity
+            android:name=".info_tech_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".info_tech_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".info_tech_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".info_tech_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".info_tech_sem2"
+            android:exported="false" />
+        <activity
+            android:name=".semester1"
             android:exported="false" />
         <activity
             android:name=".studentlogin"
@@ -31,15 +130,76 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".student_info"
+            android:exported="false" />
+        <activity
             android:name=".staff_homescreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".notes_staff1"
             android:exported="false" />
-    </application>
+        <activity
+            android:name=".library_record"
+            android:exported="false" />
+        <activity
+            android:name=".info_tech_sem2"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".info_tech_sem3"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".info_tech_sem4"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".info_tech_sem5"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".info_tech_sem6"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".comp_engg_semesters"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".comp_engg_sem1"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".comp_engg_sem2"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".comp_engg_sem3"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".comp_engg_sem4"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".comp_engg_sem5"
+            android:exported="false"
+            tools:ignore="DuplicateActivity" />
+        <activity
+            android:name=".student_homescreen"
+            android:exported="false" />
+        <activity
+            android:name=".library_record_branches"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

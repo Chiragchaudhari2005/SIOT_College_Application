@@ -8,13 +8,14 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_width="179dp"
+        android:layout_height="178dp"
+        android:layout_marginTop="96dp"
+        android:importantForAccessibility="no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/person"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -28,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.98">
+        app:layout_constraintVertical_bias="0.615">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,6 +43,7 @@
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:text="Name"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -51,6 +53,7 @@
                 android:layout_weight="1"
                 android:hint="Student_name"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -66,6 +69,7 @@
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:text="Enrollment no."
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -75,6 +79,7 @@
                 android:layout_weight="1"
                 android:hint="Student_enrollment"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -90,6 +95,7 @@
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:text="Branch"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -99,6 +105,7 @@
                 android:layout_weight="1"
                 android:hint="Student_branch"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -114,6 +121,7 @@
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:text="Blood Group"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -123,6 +131,7 @@
                 android:layout_weight="1"
                 android:hint="Student_blood_grp"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -138,6 +147,7 @@
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:text="Date Of Birth"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -147,6 +157,7 @@
                 android:layout_weight="1"
                 android:hint="Student_birthdate"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -162,6 +173,7 @@
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:text="Phone No."
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -171,6 +183,7 @@
                 android:layout_weight="1"
                 android:hint="Student_Phone"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="20dp" />
         </LinearLayout>
 

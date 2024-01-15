@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/student_info"
+                    android:hint="FEATURE_1"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/attendence"
+                    android:hint="FEATURE_2"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/library_record"
+                    android:hint="FEATURE_3"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/notes"
+                    android:hint="FEATURE_4"
                     android:textSize="20sp" />
             </LinearLayout>
 

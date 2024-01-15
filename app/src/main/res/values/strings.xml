@@ -11,4 +11,25 @@
     <string name="add_new_class">Add New Class</string>
     <string name="name">Name</string>
     <string name="Name" />
+    <string name="third_year">THIRD YEAR</string>
+    <string name="first_year">FIRST YEAR</string>
+    <string name="second_year">SECOND YEAR</string>
+    <string name="library_records">LIBRARY RECORDS</string>
+    <string name="select_an_option_to_see_the_books_available">Select an option to see the books available</string>
+    <string name="semester_1">SEMESTER-1</string>
+    <string name="semester_2">SEMESTER-2</string>
+    <string name="semester_3">SEMESTER-3</string>
+    <string name="semester_4">SEMESTER-4</string>
+    <string name="semester_5">SEMESTER-5</string>
+    <string name="semester_6">SEMESTER-6</string>
+    <string name="select_semester">SELECT SEMESTER</string>
+    <string name="select_branch">SELECT BRANCH</string>
+    <string name="automobile_engineering">AUTOMOBILE ENGINEERING</string>
+    <string name="civil_engineering">CIVIL ENGINEERING</string>
+    <string name="mechanical_engineering">MECHANICAL ENGINEERING</string>
+    <string name="computer_engineering">COMPUTER ENGINEERING</string>
+    <string name="information_technology">INFORMATION TECHNOLOGY</string>
+    <string name="book_name">Book_Name</string>
+    <string name="book">Book_name</string>
+    <string name="todo">TODO</string>
 </resources>
