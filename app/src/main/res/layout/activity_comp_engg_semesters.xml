@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".comp_engg_semesters">
+    tools:context=".comp_engg_semesters"
+    android:background="#0496a6">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -23,42 +24,48 @@
             android:id="@+id/compsem1"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:text="@string/semester_1" />
+            android:text="@string/semester_1"
+            android:background="#9cd3db"/>
 
         <Button
             android:id="@+id/compsem2"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:text="@string/semester_2" />
+            android:text="@string/semester_2"
+            android:background="#9cd3db"/>
 
         <Button
             android:id="@+id/compsem3"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:text="@string/semester_3" />
+            android:text="@string/semester_3"
+            android:background="#9cd3db"/>
 
         <Button
             android:id="@+id/compsem4"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:text="@string/semester_4" />
+            android:text="@string/semester_4"
+            android:background="#9cd3db"/>
 
         <Button
             android:id="@+id/compsem5"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:text="@string/semester_5" />
+            android:text="@string/semester_5"
+            android:background="#9cd3db"/>
 
         <Button
             android:id="@+id/compsem6"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:text="@string/semester_6" />
+            android:text="@string/semester_6"
+            android:background="#9cd3db"/>
     </LinearLayout>
 
     <TextView

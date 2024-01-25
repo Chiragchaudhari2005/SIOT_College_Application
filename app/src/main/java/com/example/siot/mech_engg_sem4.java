@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -19,13 +18,13 @@ public class mech_engg_sem4 extends AppCompatActivity {
 
         RecyclerView mechsem4rc=findViewById(R.id.mech_engg_sem4);
         List<Item> items=new ArrayList<Item>();
-        items.add(new Item("English",R.drawable.book));
-        items.add(new Item("Basic Science-PHY",R.drawable.book));
-        items.add(new Item("Basic Science-CHEM",R.drawable.book));
-        items.add(new Item("Basic Maths",R.drawable.book));
-        items.add(new Item("Workshop Practice",R.drawable.book));
-        items.add(new Item("Engineering Graphics",R.drawable.book));
-        items.add(new Item("Fundamentals of ICT",R.drawable.book));
+        items.add(new Item("English"));
+        items.add(new Item("Basic Science-PHY"));
+        items.add(new Item("Basic Science-CHEM"));
+        items.add(new Item("Basic Maths"));
+        items.add(new Item("Workshop Practice"));
+        items.add(new Item("Engineering Graphics"));
+        items.add(new Item("Fundamentals of ICT"));
 
         mechsem4rc.setLayoutManager(new LinearLayoutManager(this));
         mechsem4rc.setAdapter(new MyAdapter(getApplicationContext(),items));

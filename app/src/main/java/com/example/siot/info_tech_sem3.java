@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -20,12 +19,12 @@ public class info_tech_sem3 extends AppCompatActivity {
         RecyclerView ifsem3rc=findViewById(R.id.info_tech_sem3);
 
         List<Item> items=new ArrayList<Item>();
-        items.add(new Item("Object Oriented Programming Using C++",R.drawable.book));
-        items.add(new Item("Data Structures Using C",R.drawable.book));
-        items.add(new Item("Principles of Database",R.drawable.book));
-        items.add(new Item("Data Communication",R.drawable.book));
-        items.add(new Item("Digital Techniques and Microprocessor",R.drawable.book));
-        items.add(new Item("Applied Multimedia Techniques",R.drawable.book));
+        items.add(new Item("Object Oriented Programming Using C++"));
+        items.add(new Item("Data Structures Using C"));
+        items.add(new Item("Principles of Database"));
+        items.add(new Item("Data Communication"));
+        items.add(new Item("Digital Techniques and Microprocessor"));
+        items.add(new Item("Applied Multimedia Techniques"));
 
 
         ifsem3rc.setLayoutManager(new LinearLayoutManager(this));

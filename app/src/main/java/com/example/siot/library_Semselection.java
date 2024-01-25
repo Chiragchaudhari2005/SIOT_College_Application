@@ -7,20 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class library_record extends AppCompatActivity {
+public class library_Semselection extends AppCompatActivity {
 
     Button sem1,sem2,sem3,sem4,sem5,sem6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_library_record);
+        setContentView(R.layout.library_semselection);
+
+        Intent intent = getIntent();
+        String branch = intent.getStringExtra("branch");
 
         sem1=findViewById(R.id.sem1);
         sem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), semester1.class);
+                Intent intent=new Intent(view.getContext(), semesterList.class);
+                intent.putExtra("branch",branch);
+                intent.putExtra("sem","sem1");
                 startActivity(intent);
             }
         });
@@ -29,7 +34,9 @@ public class library_record extends AppCompatActivity {
         sem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), info_tech_sem2.class);
+                Intent intent=new Intent(view.getContext(), semesterList.class);
+                intent.putExtra("branch",branch);
+                intent.putExtra("sem","sem2");
                 startActivity(intent);
             }
         });
@@ -38,7 +45,9 @@ public class library_record extends AppCompatActivity {
         sem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), info_tech_sem3.class);
+                Intent intent=new Intent(view.getContext(), semesterList.class);
+                intent.putExtra("branch",branch);
+                intent.putExtra("sem","sem3");
                 startActivity(intent);
             }
         });
@@ -47,7 +56,9 @@ public class library_record extends AppCompatActivity {
         sem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), info_tech_sem4.class);
+                Intent intent=new Intent(view.getContext(), semesterList.class);
+                intent.putExtra("branch",branch);
+                intent.putExtra("sem","sem4");
                 startActivity(intent);
             }
         });
@@ -56,7 +67,9 @@ public class library_record extends AppCompatActivity {
         sem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), info_tech_sem5.class);
+                Intent intent=new Intent(view.getContext(), semesterList.class);
+                intent.putExtra("branch",branch);
+                intent.putExtra("sem","sem5");
                 startActivity(intent);
             }
         });
@@ -65,7 +78,9 @@ public class library_record extends AppCompatActivity {
         sem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), info_tech_sem6.class);
+                Intent intent=new Intent(view.getContext(), semesterList.class);
+                intent.putExtra("branch",branch);
+                intent.putExtra("sem","sem6");
                 startActivity(intent);
             }
         });

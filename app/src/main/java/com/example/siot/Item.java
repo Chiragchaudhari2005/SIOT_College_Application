@@ -4,7 +4,7 @@ public class Item {
     String bname;
     int image;
 
-    public Item(String bname, int image) {
+    public Item(String bname) {
         this.bname = bname;
         this.image = image;
     }

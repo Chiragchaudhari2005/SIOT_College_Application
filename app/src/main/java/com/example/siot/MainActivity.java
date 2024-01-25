@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        //
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.home_nav){
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+//Replacing fragment
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

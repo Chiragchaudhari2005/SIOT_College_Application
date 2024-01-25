@@ -18,13 +18,13 @@ public class comp_engg_sem6 extends AppCompatActivity {
 
         RecyclerView compsem6rc=findViewById(R.id.comp_engg_sem6);
         List<Item> items=new ArrayList<Item>();
-        items.add(new Item("Management",R.drawable.book));
-        items.add(new Item("Programming with Python",R.drawable.book));
-        items.add(new Item("Mobile Application Development",R.drawable.book));
-        items.add(new Item("Emerging Trends in Computer and Information Technology",R.drawable.book));
-        items.add(new Item("Network and Information Security",R.drawable.book));
-        items.add(new Item("Entrepreneuship Development",R.drawable.book));
-        items.add(new Item("Capstone Project- Execution",R.drawable.book));
+        items.add(new Item("Management"));
+        items.add(new Item("Programming with Python"));
+        items.add(new Item("Mobile Application Development"));
+        items.add(new Item("Emerging Trends in Computer and Information Technology"));
+        items.add(new Item("Network and Information Security"));
+        items.add(new Item("Entrepreneuship Development"));
+        items.add(new Item("Capstone Project- Execution"));
 
         compsem6rc.setLayoutManager(new LinearLayoutManager(this));
         compsem6rc.setAdapter(new MyAdapter(getApplicationContext(),items));

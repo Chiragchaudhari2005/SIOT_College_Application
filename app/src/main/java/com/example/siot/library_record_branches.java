@@ -20,7 +20,8 @@ public class library_record_branches extends AppCompatActivity {
         info_tech.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), library_record.class);
+                Intent intent=new Intent(view.getContext(), library_Semselection.class);
+                intent.putExtra("branch","IF");
                 startActivity(intent);
             }
         });
@@ -29,7 +30,8 @@ public class library_record_branches extends AppCompatActivity {
         comp_engg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), comp_engg_semesters.class);
+                Intent intent=new Intent(view.getContext(), library_Semselection.class);
+                intent.putExtra("branch","CO");
                 startActivity(intent);
             }
         });
@@ -38,7 +40,8 @@ public class library_record_branches extends AppCompatActivity {
         mech_engg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), mech_engg_semesters.class);
+                Intent intent=new Intent(view.getContext(), library_Semselection.class);
+                intent.putExtra("branch","ME");
                 startActivity(intent);
             }
         });
@@ -47,7 +50,8 @@ public class library_record_branches extends AppCompatActivity {
         civil_engg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), civil_engg_semesters.class);
+                Intent intent=new Intent(view.getContext(), library_Semselection.class);
+                intent.putExtra("branch","CE");
                 startActivity(intent);
             }
         });
@@ -56,7 +60,8 @@ public class library_record_branches extends AppCompatActivity {
         auto_engg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(), auto_engg_semesters.class);
+                Intent intent=new Intent(view.getContext(), library_Semselection.class);
+                intent.putExtra("branch","AT");
                 startActivity(intent);
             }
         });

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 public class HomeFragment extends Fragment {
 
@@ -49,25 +50,24 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        Intent intent = getActivity().getIntent();
-        selectedActivity = intent.getIntExtra("Selected activity", (int) 0);
-
+        if (getActivity() != null) {
+            Intent intent = getActivity().getIntent();
+            if (intent != null) {
+                selectedActivity = intent.getIntExtra("Selected activity", 0);
+            }
+        }
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        if (selectedActivity == 0)
-        {
+        // Check the selectedActivity and load the appropriate fragment
+        if (selectedActivity == 0) {
             return inflater.inflate(R.layout.staff_homescreen, container, false);
-        }
-        else
-        {
+        } else {
             return inflater.inflate(R.layout.student_homescreen, container, false);
         }
-
     }
+    
 }

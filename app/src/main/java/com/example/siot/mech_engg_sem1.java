@@ -19,13 +19,13 @@ public class mech_engg_sem1 extends AppCompatActivity {
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) RecyclerView mechsem1rc=findViewById(R.id.mech_engg_sem1);
         List<Item> items=new ArrayList<Item>();
-        items.add(new Item("English",R.drawable.book));
-        items.add(new Item("Basic Science-PHY",R.drawable.book));
-        items.add(new Item("Basic Science-CHEM",R.drawable.book));
-        items.add(new Item("Basic Maths",R.drawable.book));
-        items.add(new Item("Workshop Practice",R.drawable.book));
-        items.add(new Item("Engineering Graphics",R.drawable.book));
-        items.add(new Item("Fundamentals of ICT",R.drawable.book));
+        items.add(new Item("English"));
+        items.add(new Item("Basic Science-PHY"));
+        items.add(new Item("Basic Science-CHEM"));
+        items.add(new Item("Basic Maths"));
+        items.add(new Item("Workshop Practice"));
+        items.add(new Item("Engineering Graphics"));
+        items.add(new Item("Fundamentals of ICT"));
 
         mechsem1rc.setLayoutManager(new LinearLayoutManager(this));
         mechsem1rc.setAdapter(new MyAdapter(getApplicationContext(),items));

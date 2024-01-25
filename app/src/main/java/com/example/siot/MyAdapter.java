@@ -28,7 +28,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.bnameView.setText(items.get(position).getBname());
-        holder.imageView.setImageResource(items.get(position).getImage());
+        holder.imageView.setImageResource(R.drawable.book);
     }
 
     @Override

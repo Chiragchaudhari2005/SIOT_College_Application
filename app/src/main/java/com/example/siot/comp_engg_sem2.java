@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -19,12 +18,12 @@ public class comp_engg_sem2 extends AppCompatActivity {
 
         RecyclerView compsem2rc=findViewById(R.id.comp_engg_sem2);
         List<Item> items=new ArrayList<Item>();
-        items.add(new Item("Programming in 'C'",R.drawable.book));
-        items.add(new Item("Applied Mathematics",R.drawable.book));
-        items.add(new Item("Linux Basics",R.drawable.book));
-        items.add(new Item("Web Page Designing",R.drawable.book));
-        items.add(new Item("Professional Communication",R.drawable.book));
-        items.add(new Item("Basic Electrical and Electronics Engineering",R.drawable.book));
+        items.add(new Item("Programming in 'C'"));
+        items.add(new Item("Applied Mathematics"));
+        items.add(new Item("Linux Basics"));
+        items.add(new Item("Web Page Designing"));
+        items.add(new Item("Professional Communication"));
+        items.add(new Item("Basic Electrical and Electronics Engineering"));
 
         compsem2rc.setLayoutManager(new LinearLayoutManager(this));
         compsem2rc.setAdapter(new MyAdapter(getApplicationContext(),items));

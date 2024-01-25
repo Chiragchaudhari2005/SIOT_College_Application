@@ -31,10 +31,5 @@ public class signup_activity extends AppCompatActivity {
         String Email = email_edtxt.getText().toString();
         String Birthdate = birthdate_edtxt.getText().toString();
         String phone = phone_edtxt.getText().toString();
-
-
-
-
-
     }
 }
