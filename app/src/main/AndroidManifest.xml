@@ -111,9 +111,7 @@
         <activity
             android:name=".info_tech_sem2"
             android:exported="false" />
-        <activity
-            android:name=".semester1"
-            android:exported="false" />
+
         <activity
             android:name=".studentlogin"
             android:exported="false" />
@@ -144,9 +142,7 @@
         <activity
             android:name=".notes_staff1"
             android:exported="false" />
-        <activity
-            android:name=".library_record"
-            android:exported="false" />
+
         <activity
             android:name=".info_tech_sem2"
             android:exported="false"
@@ -210,6 +206,11 @@
             android:exported="false"/>
         <activity android:name=".semesterList"
             android:exported="false"/>
+        <activity android:name=".attendence_selectinfo"
+            android:exported="false"/>
+        <activity android:name=".attendence_list"
+            android:exported="false"/>
+
         <activity
             android:name=".library_record_branches"
             android:exported="true">
@@ -219,6 +220,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

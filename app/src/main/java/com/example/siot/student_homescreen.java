@@ -30,6 +30,7 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         attendenceBtn = findViewById(R.id.attendenceBtn);
         notesBtn = findViewById(R.id.notesBtn);
 
+
         studInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +62,7 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
                 startActivity(intent);
             }
         });
+
     }
 
     @Override

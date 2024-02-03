@@ -42,5 +42,13 @@ public class staff_homescreen extends AppCompatActivity {
             }
         });
 
+        attendenceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), attendence_selectinfo.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
