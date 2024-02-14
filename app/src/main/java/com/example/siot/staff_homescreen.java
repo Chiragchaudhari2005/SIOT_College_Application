@@ -37,7 +37,7 @@ public class staff_homescreen extends AppCompatActivity {
         notesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), notes_staff1.class);
+                Intent intent = new Intent(v.getContext(), NotesUpload.class);
                 startActivity(intent);
             }
         });

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,107 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:targetApi="31"
-        android:theme="@style/AppTheme">>
-        <activity
-            android:name=".auto_engg_sem6"
-            android:exported="false" />
-        <activity
-            android:name=".auto_engg_sem5"
-            android:exported="false" />
-        <activity
-            android:name=".auto_engg_sem4"
-            android:exported="false" />
-        <activity
-            android:name=".auto_engg_sem3"
-            android:exported="false" />
-        <activity
-            android:name=".auto_engg_sem2"
-            android:exported="false" />
-        <activity
-            android:name=".auto_engg_sem1"
-            android:exported="false" />
-        <activity
-            android:name=".auto_engg_semesters"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_sem6"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_sem5"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_sem4"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_sem3"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_sem2"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_sem1"
-            android:exported="false" />
-        <activity
-            android:name=".civil_engg_semesters"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_sem6"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_sem5"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_sem4"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_sem3"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_sem2"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_sem1"
-            android:exported="false" />
-        <activity
-            android:name=".mech_engg_semesters"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_sem6"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_sem5"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_sem4"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_sem3"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_sem2"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_sem1"
-            android:exported="false" />
-        <activity
-            android:name=".comp_engg_semesters"
-            android:exported="false" />
-        <activity
-            android:name=".info_tech_sem6"
-            android:exported="false" />
-        <activity
-            android:name=".info_tech_sem5"
-            android:exported="false" />
-        <activity
-            android:name=".info_tech_sem4"
-            android:exported="false" />
-        <activity
-            android:name=".info_tech_sem3"
-            android:exported="false" />
-        <activity
-            android:name=".info_tech_sem2"
-            android:exported="false" />
+        android:theme="@style/AppTheme"
+        tools:targetApi="31">
 
         <activity
             android:name=".studentlogin"
@@ -142,51 +46,6 @@
         <activity
             android:name=".notes_staff1"
             android:exported="false" />
-
-        <activity
-            android:name=".info_tech_sem2"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".info_tech_sem3"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".info_tech_sem4"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".info_tech_sem5"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".info_tech_sem6"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".comp_engg_semesters"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".comp_engg_sem1"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".comp_engg_sem2"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".comp_engg_sem3"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".comp_engg_sem4"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name=".comp_engg_sem5"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
         <activity
             android:name=".student_homescreen"
             android:exported="false" />
@@ -202,30 +61,21 @@
         <activity
             android:name=".studentDetailsStaff"
             android:exported="false" />
-        <activity android:name=".library_Semselection"
-            android:exported="false"/>
-        <activity android:name=".semesterList"
-            android:exported="false"/>
+        <activity
+            android:name=".library_Semselection"
+            android:exported="false" />
+        <activity
+            android:name=".semesterList"
+            android:exported="false" />
         <activity android:name=".attendence_selectinfo"
             android:exported="false"/>
         <activity android:name=".attendence_list"
             android:exported="false"/>
-
         <activity
             android:name=".library_record_branches"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <service android:name=".MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+            android:exported="true" />
+        <activity android:name=".NotesUpload"
+            android:exported="false"/>
     </application>
 
 </manifest>

@@ -80,6 +80,255 @@ public class semesterList extends AppCompatActivity {
             items.add(new Item("Fundamentals of ICT"));
         }
 
+        if ("IF".equals(branch) && "sem1".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("IF".equals(branch) && "sem2".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("IF".equals(branch) && "sem3".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("IF".equals(branch) && "sem4".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("IF".equals(branch) && "sem5".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("IF".equals(branch) && "sem6".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem1".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem1".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem2".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem3".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem4".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem5".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("ME".equals(branch) && "sem6".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("CE".equals(branch) && "sem1".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("CE".equals(branch) && "sem2".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("CE".equals(branch) && "sem3".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("CE".equals(branch) && "sem4".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("CE".equals(branch) && "sem5".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("CE".equals(branch) && "sem6".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("AT".equals(branch) && "sem1".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("AT".equals(branch) && "sem2".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("AT".equals(branch) && "sem3".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("AT".equals(branch) && "sem4".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("AT".equals(branch) && "sem5".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
+
+        if ("AT".equals(branch) && "sem6".equals(sem)){
+            items.add(new Item("English"));
+            items.add(new Item("Basic Science-PHY"));
+            items.add(new Item("Basic Science-CHEM"));
+            items.add(new Item("Basic Maths"));
+            items.add(new Item("Workshop Practice"));
+            items.add(new Item("Engineering Graphics"));
+            items.add(new Item("Fundamentals of ICT"));
+        }
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
