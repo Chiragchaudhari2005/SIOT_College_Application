@@ -6,8 +6,18 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class student_homescreen extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -16,6 +26,8 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
     private ImageButton attendenceBtn;
     private ImageButton notesBtn;
     private GestureDetector gestureDetector;
+    private String name,branch,bloodgroup,dob;
+    private Long enrollment,phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +41,27 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         libraryBtn = findViewById(R.id.libraryBtn);
         attendenceBtn = findViewById(R.id.attendenceBtn);
         notesBtn = findViewById(R.id.notesBtn);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = auth.getCurrentUser();
+        String uid = currentUser.getUid();
+
+        //Code to retrieve data from firebase for particular user
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYCO").document(uid);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot documentSnapshot = task.getResult();
+                    name = documentSnapshot.getString("name");
+                    enrollment = documentSnapshot.getLong("enrollment");
+                    branch = documentSnapshot.getString("branch");
+                    bloodgroup = documentSnapshot.getString("bloodgroup");
+                    dob = documentSnapshot.getString("DOB");
+                    phone = documentSnapshot.getLong("phone");
+                }
+            }
+        });
 
 
         studInfoBtn.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +83,9 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         attendenceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), stuattmain.class);
+                Toast.makeText(student_homescreen.this, "name="+name, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), stuatt_sub_select.class);
+                intent.putExtra("name",name);
                 startActivity(intent);
             }
         });
@@ -64,6 +99,7 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         });
 
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

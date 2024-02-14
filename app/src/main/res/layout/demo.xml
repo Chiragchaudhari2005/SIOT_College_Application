@@ -1,90 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0496a6"
+    android:background="#C1F2B0"
     tools:context=".HomeFragment">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/head_bg"
         android:contentDescription="TODO"
         android:src="@drawable/siot_logo_400_40_removebg"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="30dp" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/button_bg"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/button_bg_og"
-            tools:layout_editor_absoluteX="10dp"
-            tools:layout_editor_absoluteY="105dp">
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:autoStart="true"
+            android:flipInterval="2000"
+            android:foregroundGravity="center"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right">
 
-            <ViewFlipper
-                android:id="@+id/viewFlipper"
+            <ImageView
+                android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
-                android:autoStart="true"
-                android:background="@drawable/button_bg"
-                android:flipInterval="2000"
-                android:foregroundGravity="center"
-                android:inAnimation="@android:anim/slide_in_left"
-                android:outAnimation="@android:anim/slide_out_right">
+                android:src="@drawable/vfimg1" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="380dp"
-                    android:layout_height="250dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/vfimg1" />
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/vfimgog1" />
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:src="@drawable/vfimgog1" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/vfimg3" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/vfimg3" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/vfimg4" />
+        </ViewFlipper>
+    </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/vfimg4" />
-            </ViewFlipper>
-        </LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FBF6EE"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:orientation="horizontal">
+        <TableRow android:padding="5dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -94,8 +93,8 @@
 
                 <ImageButton
                     android:id="@+id/infoBtn"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/todo"
                     android:src="@drawable/stud_info_logo" />
@@ -106,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Student info"
+                    android:text="My Profile"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -116,10 +115,11 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
+
                 <ImageButton
                     android:id="@+id/attendenceBtn"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:contentDescription="TODO"
                     android:src="@drawable/attendance" />
@@ -133,12 +133,6 @@
                     android:text="Attendance"
                     android:textSize="20sp" />
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -148,19 +142,46 @@
 
                 <ImageButton
                     android:id="@+id/libraryBtn"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:contentDescription="TODO"
+                    android:contentDescription="@string/todo"
                     android:src="@drawable/library_record_logo" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Library Record"
+                    android:text="Library record"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/notesBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/notes" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Notes"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -171,22 +192,49 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/notesBtn"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:id="@+id/achievementBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:contentDescription="TODO"
-                    android:src="@drawable/notes" />
+                    android:src="@drawable/achievements_logo_50_50" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Notes"
+                    android:text="Achievements"
                     android:textSize="20sp" />
             </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/settingBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/settings_icon_35_35" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Settings"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

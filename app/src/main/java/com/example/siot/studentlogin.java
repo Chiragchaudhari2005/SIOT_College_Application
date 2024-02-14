@@ -44,7 +44,7 @@ public class studentlogin extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(firebaseAuth.getCurrentUser() != null){
+/*       if(firebaseAuth.getCurrentUser() != null){
             startActivity(new Intent(studentlogin.this, student_homescreen.class));
         }
         else {
@@ -54,7 +54,13 @@ public class studentlogin extends AppCompatActivity {
                     loginUser(v);
                 }
             });
-        }
+        }*/
+        login_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginUser(v);
+            }
+        });
     }
 
     private void loginUser(View v) {

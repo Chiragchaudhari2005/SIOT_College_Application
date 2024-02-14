@@ -5,6 +5,7 @@ import static com.example.siot.R.*;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -34,8 +36,9 @@ import com.google.firebase.storage.UploadTask;
 
 public class NotesUpload extends AppCompatActivity {
 
-    Button selectfile, upload, branchnotes, semesternotes;
+    Button selectfile, upload, branchnotes, semBtn;
     TextView notifcation;
+    String selectedBranch,selectedSem;
     Uri pdfUri;
 
     FirebaseStorage storage; //used to upload the files
@@ -54,7 +57,8 @@ public class NotesUpload extends AppCompatActivity {
         upload=findViewById(R.id.Uploadbtn);
         notifcation=findViewById(R.id.notification);
         branchnotes=findViewById(R.id.branchBtnnotes);
-        semesternotes=findViewById(R.id.semBtnnotes);
+        semBtn=findViewById(R.id.semBtnnotes);
+        final int[] checkedItem = {-1};
 
 
 
@@ -85,15 +89,94 @@ public class NotesUpload extends AppCompatActivity {
                 }
             }
         });
+
+        branchnotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                branchnotes.clearFocus();
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(NotesUpload.this);
+
+                alertDialog.setTitle("Choose branch");  // title of the alert dialog
+
+                final String[] listItems = new String[]{"CO", "IF", "ME", "AT"};
+
+                alertDialog.setSingleChoiceItems(listItems, checkedItem[0], new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        checkedItem[0] = which;
+
+                        branchnotes.setText(listItems[which]);
+                        selectedBranch = listItems[which];
+
+                        dialog.dismiss();
+                    }
+                });
+
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Handle Cancel button click
+                    }
+                });
+
+                AlertDialog customAlertDialog = alertDialog.create();
+                customAlertDialog.show();
+            }
+        });
+
+        semBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    semBtn.clearFocus();
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(NotesUpload.this);
+
+
+                    alertDialog.setTitle("Choose branch");
+
+                    final String[] listItems = new String[]{"SEM1", "SEM2", "SEM3", "SEM4", "SEM5", "SEM6"};
+
+                    alertDialog.setSingleChoiceItems(listItems, checkedItem[0], (dialog, which) -> {
+
+                        checkedItem[0] = which;
+
+                        semBtn.setText(listItems[which]);
+                        selectedSem = listItems[which];
+
+                        dialog.dismiss();
+                    });
+
+                    alertDialog.setNegativeButton("Cancel", (dialog, which) -> {
+
+                    });
+
+                    AlertDialog customAlertDialog = alertDialog.create();
+
+                    customAlertDialog.show();
+            }
+        });
+
     }
 
     private void uploadFile(Uri pdfUri)
     {
-
+        String mainFolder = new String();
+        String subFolder = new String();
         final String FileName=System.currentTimeMillis()+"";
         StorageReference reference=storage.getReference();
 
-        reference.child("COMP_ENGG").child("sem6").child(FileName).putFile(pdfUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        Toast.makeText(this, selectedBranch, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, selectedSem, Toast.LENGTH_SHORT).show();
+
+        if ("CO".equals(selectedBranch) && "SEM6".equals(selectedSem)){
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem6";
+        } else if ("CO".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem5";
+        }
+
+        reference.child(mainFolder).child(subFolder).child(FileName).putFile(pdfUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 String url=taskSnapshot.getUploadSessionUri().toString();
