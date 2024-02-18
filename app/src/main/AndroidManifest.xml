@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -80,6 +82,14 @@
         <activity
             android:name=".AvatarSelectionActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".FetchNotes"
+            android:exported="false" />
+        <activity
+            android:name=".NotesRecyclerActivity"
+            android:exported="false" />
+
 
         <activity
             android:name=".library_record_branches"

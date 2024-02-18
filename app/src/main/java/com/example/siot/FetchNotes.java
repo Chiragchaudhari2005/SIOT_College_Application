@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class FetchNotes extends AppCompatActivity {
 
@@ -93,7 +94,11 @@ public class FetchNotes extends AppCompatActivity {
         fetchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FetchNotes.this,NotesRecyclerActivity.class));
+                //startActivity(new Intent(FetchNotes.this,NotesRecyclerActivity.class));
+                Intent intent = new Intent(FetchNotes.this,NotesRecyclerActivity.class);
+                intent.putExtra("branch",selectedBranch);
+                intent.putExtra("sem",selectedSem);
+                startActivity(intent);
             }
         });
     }

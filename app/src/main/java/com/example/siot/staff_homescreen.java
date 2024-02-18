@@ -13,7 +13,7 @@ public class staff_homescreen extends AppCompatActivity {
     private ImageButton notesBtn;
     private ImageButton infoBtn;
     private ImageButton attendenceBtn;
-    private ImageButton libraryBtn;
+    private ImageButton libraryBtn,settingBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,7 @@ public class staff_homescreen extends AppCompatActivity {
         infoBtn = findViewById(R.id.infoBtn);
         attendenceBtn = findViewById(R.id.attendenceBtn);
         libraryBtn = findViewById(R.id.libraryBtn);
+        settingBtn = findViewById(R.id.settingBtn);
 
         Intent intent = getIntent();
 
@@ -54,6 +55,14 @@ public class staff_homescreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(view.getContext(), library_record_branches.class);
+                startActivity(intent);
+            }
+        });
+
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(staff_homescreen.this, settings.class);
                 startActivity(intent);
             }
         });

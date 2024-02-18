@@ -1,6 +1,9 @@
 package com.example.siot;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,13 +21,21 @@ import java.util.ArrayList;
 
 public class NotesRecyclerActivity extends AppCompatActivity {
     RecyclerView recyclerView;
+    String branch,sem,mainFolder,subFolder;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notes_recycler_view);
 
-        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
+        Intent intent = getIntent();
+        branch = intent.getStringExtra("branch");
+        sem = intent.getStringExtra("sem");
+
+        setFolders();
+        Toast.makeText(this, "m="+mainFolder+"s="+subFolder, Toast.LENGTH_SHORT).show();
+        //Log.d(mainFolder, "main: "+mainFolder+"sub: "+subFolder);
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child(mainFolder).child(subFolder);
 
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -59,7 +70,18 @@ public class NotesRecyclerActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclernotes);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(NotesRecyclerActivity.this));
-        NotesAdapter notesAdapter=new NotesAdapter(recyclerView,NotesRecyclerActivity.this, new ArrayList<String>(), new ArrayList<String>());
+        NotesAdapter notesAdapter=new NotesAdapter(recyclerView,NotesRecyclerActivity.this, new ArrayList<String>(), new ArrayList<String>(),branch,sem);
         recyclerView.setAdapter(notesAdapter);
+    }
+
+    void setFolders(){
+        if("CO".equals(branch) && "SEM1".equals(sem)){
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem1";
+        }
+        else if("CO".equals(branch) && "SEM6".equals(sem)){
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem6";
+        }
     }
 }

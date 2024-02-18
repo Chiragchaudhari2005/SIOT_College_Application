@@ -28,10 +28,10 @@ public class screen_one extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(firebaseAuth.getCurrentUser() != null){
-            startActivity(new Intent(screen_one.this, staff_homescreen.class));
-        }
-        else {
+        //if(firebaseAuth.getCurrentUser() != null){
+            //startActivity(new Intent(screen_one.this, staff_homescreen.class));
+        //}
+        //else {
           student_login_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -46,6 +46,6 @@ public class screen_one extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-        }
+       // }
     }
 }

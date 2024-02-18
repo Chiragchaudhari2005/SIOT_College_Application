@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AvatarSelectionActivity extends AppCompatActivity {
 
     private GridView gridView;
-    private final int[] avatarImages = {R.drawable.profileimg, R.drawable.profileimg, R.drawable.profileimg,R.drawable.profileimg, R.drawable.profileimg, R.drawable.profileimg,R.drawable.profileimg, R.drawable.profileimg, R.drawable.profileimg,};
+    private final String[] avatarImages = {"profileimg", "person", "profileimg", "profileimg", "profileimg", "profileimg", "profileimg", "profileimg", "profileimg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +25,14 @@ public class AvatarSelectionActivity extends AppCompatActivity {
         gridView.setAdapter(new AvatarAdapter());
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            // Return the selected avatar to the SettingsActivity
-            int selectedAvatar = avatarImages[position];
+            // Return the selected avatar name to the SettingsActivity
+            String selectedAvatar = avatarImages[position];
+
+            // Pass the selected avatar name directly
             setResult(RESULT_OK, getIntent().putExtra("selectedAvatar", selectedAvatar));
             finish();
         });
+
     }
 
     private class AvatarAdapter extends BaseAdapter {
@@ -59,8 +62,20 @@ public class AvatarSelectionActivity extends AppCompatActivity {
                 imageView = (ImageView) convertView;
             }
 
-            imageView.setImageResource(avatarImages[position]);
+            // Get the resource ID dynamically
+            int imageResourceId = getResources().getIdentifier(avatarImages[position], "drawable", getPackageName());
+
+            if (imageResourceId != 0) {
+                // Check if the resource ID is valid
+                imageView.setImageResource(imageResourceId);
+            } else {
+                // Handle the case where the resource ID is not found
+                // You may set a default image or take other appropriate action
+                imageView.setImageResource(R.drawable.profileimg);
+            }
+
             return imageView;
         }
+
     }
 }
