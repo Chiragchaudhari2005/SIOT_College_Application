@@ -50,5 +50,13 @@ public class staff_homescreen extends AppCompatActivity {
             }
         });
 
+        libraryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(view.getContext(), library_record_branches.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

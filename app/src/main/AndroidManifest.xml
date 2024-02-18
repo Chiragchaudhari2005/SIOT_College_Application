@@ -10,10 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/app_logo_round"
         android:supportsRtl="true"
-        tools:targetApi="31"
-        android:theme="@style/AppTheme">>
+        android:theme="@style/AppTheme"
+        tools:targetApi="31">
 
-
+        <activity
+            android:name=".NotesRecyclerActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".FetchNotes"
+            android:exported="false" />
         <activity
             android:name=".studentlogin"
             android:exported="false" />
@@ -55,33 +60,30 @@
             android:name=".stuattmain"
             android:exported="false" />
         <activity
-            android:name=".stunotesmain"
-            android:exported="false" />
-        <activity
             android:name=".studentInfo_Staff"
             android:exported="false" />
         <activity
             android:name=".studentDetailsStaff"
             android:exported="false" />
-        <activity android:name=".library_Semselection"
-            android:exported="false"/>
-        <activity android:name=".semesterList"
-            android:exported="false"/>
-        <activity android:name=".attendence_selectinfo"
-            android:exported="false"/>
-        <activity android:name=".attendence_list"
-            android:exported="false"/>
-
+        <activity
+            android:name=".library_Semselection"
+            android:exported="false" />
+        <activity
+            android:name=".semesterList"
+            android:exported="false" />
+        <activity
+            android:name=".attendence_selectinfo"
+            android:exported="false" />
+        <activity
+            android:name=".attendence_list"
+            android:exported="false" />
         <activity
             android:name=".library_record_branches"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <service android:name=".MyFirebaseMessagingService"
+
+        <service
+            android:name=".MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

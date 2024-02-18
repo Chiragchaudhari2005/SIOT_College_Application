@@ -98,7 +98,7 @@ public class NotesUpload extends AppCompatActivity {
 
                 alertDialog.setTitle("Choose branch");  // title of the alert dialog
 
-                final String[] listItems = new String[]{"CO", "IF", "ME", "AT"};
+                final String[] listItems = new String[]{"CO", "IF", "ME", "AE", "CE"};
 
                 alertDialog.setSingleChoiceItems(listItems, checkedItem[0], new DialogInterface.OnClickListener() {
                     @Override
@@ -162,19 +162,139 @@ public class NotesUpload extends AppCompatActivity {
     {
         String mainFolder = new String();
         String subFolder = new String();
-        final String FileName=System.currentTimeMillis()+"";
+        final String FileName=System.currentTimeMillis()+".pdf";
+        final String FileName1=System.currentTimeMillis()+"";
+
         StorageReference reference=storage.getReference();
 
         Toast.makeText(this, selectedBranch, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, selectedSem, Toast.LENGTH_SHORT).show();
 
-        if ("CO".equals(selectedBranch) && "SEM6".equals(selectedSem)){
+        if ("CO".equals(selectedBranch) && "SEM1".equals(selectedSem)){
             mainFolder = "COMP_ENGG";
-            subFolder = "sem6";
-        } else if ("CO".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
+            subFolder = "sem1";
+        }
+        else if ("CO".equals(selectedBranch) && "SEM2".equals(selectedSem)) {
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem2";
+        }
+        else if ("CO".equals(selectedBranch) && "SEM3".equals(selectedSem)) {
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem3";
+        }
+        else if ("CO".equals(selectedBranch) && "SEM4".equals(selectedSem)) {
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem4";
+        }
+        else if ("CO".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
             mainFolder = "COMP_ENGG";
             subFolder = "sem5";
         }
+        else if ("CO".equals(selectedBranch) && "SEM6".equals(selectedSem)) {
+            mainFolder = "COMP_ENGG";
+            subFolder = "sem6";
+        }
+
+        if ("IF".equals(selectedBranch) && "SEM1".equals(selectedSem)){
+            mainFolder = "IF_ENGG";
+            subFolder = "sem1";
+        }
+        else if ("IF".equals(selectedBranch) && "SEM2".equals(selectedSem)) {
+            mainFolder = "IF_ENGG";
+            subFolder = "sem2";
+        }
+        else if ("IF".equals(selectedBranch) && "SEM3".equals(selectedSem)) {
+            mainFolder = "IF_ENGG";
+            subFolder = "sem3";
+        }
+        else if ("IF".equals(selectedBranch) && "SEM4".equals(selectedSem)) {
+            mainFolder = "IF_ENGG";
+            subFolder = "sem4";
+        }
+        else if ("IF".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
+            mainFolder = "IF_ENGG";
+            subFolder = "sem5";
+        }
+        else if ("IF".equals(selectedBranch) && "SEM6".equals(selectedSem)) {
+            mainFolder = "IF_ENGG";
+            subFolder = "sem6";
+        }
+
+        if ("ME".equals(selectedBranch) && "SEM1".equals(selectedSem)){
+            mainFolder = "ME_ENGG";
+            subFolder = "sem1";
+        }
+        else if ("ME".equals(selectedBranch) && "SEM2".equals(selectedSem)) {
+            mainFolder = "ME_ENGG";
+            subFolder = "sem2";
+        }
+        else if ("ME".equals(selectedBranch) && "SEM3".equals(selectedSem)) {
+            mainFolder = "ME_ENGG";
+            subFolder = "sem3";
+        }
+        else if ("ME".equals(selectedBranch) && "SEM4".equals(selectedSem)) {
+            mainFolder = "ME_ENGG";
+            subFolder = "sem4";
+        }
+        else if ("ME".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
+            mainFolder = "ME_ENGG";
+            subFolder = "sem5";
+        }
+        else if ("ME".equals(selectedBranch) && "SEM6".equals(selectedSem)) {
+            mainFolder = "ME_ENGG";
+            subFolder = "sem6";
+        }
+
+        if ("AE".equals(selectedBranch) && "SEM1".equals(selectedSem)){
+            mainFolder = "AE_ENGG";
+            subFolder = "sem1";
+        }
+        else if ("AE".equals(selectedBranch) && "SEM2".equals(selectedSem)) {
+            mainFolder = "AE_ENGG";
+            subFolder = "sem2";
+        }
+        else if ("AE".equals(selectedBranch) && "SEM3".equals(selectedSem)) {
+            mainFolder = "AE_ENGG";
+            subFolder = "sem3";
+        }
+        else if ("AE".equals(selectedBranch) && "SEM4".equals(selectedSem)) {
+            mainFolder = "AE_ENGG";
+            subFolder = "sem4";
+        }
+        else if ("AE".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
+            mainFolder = "AE_ENGG";
+            subFolder = "sem5";
+        }
+        else if ("AE".equals(selectedBranch) && "SEM6".equals(selectedSem)) {
+            mainFolder = "AE_ENGG";
+            subFolder = "sem6";
+        }
+
+        if ("CE".equals(selectedBranch) && "SEM1".equals(selectedSem)){
+            mainFolder = "CE_ENGG";
+            subFolder = "sem1";
+        }
+        else if ("CE".equals(selectedBranch) && "SEM2".equals(selectedSem)) {
+            mainFolder = "CE_ENGG";
+            subFolder = "sem2";
+        }
+        else if ("CE".equals(selectedBranch) && "SEM3".equals(selectedSem)) {
+            mainFolder = "CE_ENGG";
+            subFolder = "sem3";
+        }
+        else if ("CE".equals(selectedBranch) && "SEM4".equals(selectedSem)) {
+            mainFolder = "CE_ENGG";
+            subFolder = "sem4";
+        }
+        else if ("CE".equals(selectedBranch) && "SEM5".equals(selectedSem)) {
+            mainFolder = "CE_ENGG";
+            subFolder = "sem5";
+        }
+        else if ("CE".equals(selectedBranch) && "SEM6".equals(selectedSem)) {
+            mainFolder = "CE_ENGG";
+            subFolder = "sem6";
+        }
+
 
         reference.child(mainFolder).child(subFolder).child(FileName).putFile(pdfUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -182,7 +302,7 @@ public class NotesUpload extends AppCompatActivity {
                 String url=taskSnapshot.getUploadSessionUri().toString();
 
                 DatabaseReference reference1=database.getReference();
-                reference1.child(FileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference1.child(FileName1).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())

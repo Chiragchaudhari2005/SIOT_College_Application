@@ -93,7 +93,7 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         notesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), stunotesmain.class);
+                Intent intent = new Intent(v.getContext(), FetchNotes.class);
                 startActivity(intent);
             }
         });
