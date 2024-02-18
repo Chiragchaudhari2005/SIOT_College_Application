@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class student_homescreen extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
-    private ImageButton studInfoBtn;
+    private ImageButton studInfoBtn,settingBtn;
     private ImageButton libraryBtn;
     private ImageButton attendenceBtn;
     private ImageButton notesBtn;
@@ -41,6 +41,7 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         libraryBtn = findViewById(R.id.libraryBtn);
         attendenceBtn = findViewById(R.id.attendenceBtn);
         notesBtn = findViewById(R.id.notesBtn);
+        settingBtn = findViewById(R.id.settingBtn);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
@@ -98,6 +99,14 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
             }
         });
 
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(), settings.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -112,9 +121,9 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         float deltaX = e2.getX() - e1.getX();
 
         if (Math.abs(deltaX) > 200 && Math.abs(velocityX) > 200) {
-            // Left swipe detected, open achievements.class
-            Intent intent = new Intent(this, achievements.class);
-            startActivity(intent);
+            // Left swipe detected, open student_achievements.xml.class
+            //Intent intent = new Intent(this, student_achievements.class);
+            //startActivity(intent);
             return true;
         }
 

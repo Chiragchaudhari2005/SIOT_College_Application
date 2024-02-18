@@ -32,29 +32,29 @@ public class stafflogin extends AppCompatActivity {
         login_btn = findViewById(R.id.login_btn);
 
 
-     /*   login_btn.setOnClickListener(new View.OnClickListener() {
+        login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUser(v);
             }
         });
-        Intent intent = getIntent(); */
+        Intent intent = getIntent();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //if(firebaseAuth.getCurrentUser() != null){
-            //startActivity(new Intent(stafflogin.this, staff_homescreen.class));
-        //}
-        //else {
+        if(firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(stafflogin.this, staff_homescreen.class));
+        }
+        else {
             login_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     loginUser(v);
                 }
             });
-        //}
+        }
     }
     private void loginUser(View v) {
         String email = emailEditText.getText().toString();

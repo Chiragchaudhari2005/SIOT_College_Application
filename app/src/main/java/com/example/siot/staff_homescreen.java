@@ -10,10 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class staff_homescreen extends AppCompatActivity {
 
-    private ImageButton notesBtn;
-    private ImageButton infoBtn;
-    private ImageButton attendenceBtn;
-    private ImageButton libraryBtn;
+    private ImageButton notesBtn,infoBtn,attendenceBtn,libraryBtn,settingBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +21,7 @@ public class staff_homescreen extends AppCompatActivity {
         infoBtn = findViewById(R.id.infoBtn);
         attendenceBtn = findViewById(R.id.attendenceBtn);
         libraryBtn = findViewById(R.id.libraryBtn);
+        settingBtn = findViewById(R.id.settingBtn);
 
         Intent intent = getIntent();
 
@@ -46,6 +45,22 @@ public class staff_homescreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), attendence_selectinfo.class);
+                startActivity(intent);
+            }
+        });
+
+        libraryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(), library_record_branches.class);
+                startActivity(intent);
+            }
+        });
+
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(), settings.class);
                 startActivity(intent);
             }
         });
