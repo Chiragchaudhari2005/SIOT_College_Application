@@ -17,7 +17,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class student_info extends AppCompatActivity {
-    private TextView nametv,enrollmenttv,branchtv,bloodgrouptv,dobtv,phonetv,semtv;
+    private TextView nametv,enrollmenttv,branchtv,bloodgrouptv,dobtv,phonetv,semtv,parenttv;
     private ImageView profileImg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class student_info extends AppCompatActivity {
         phonetv = findViewById(R.id.textView6);
         semtv = findViewById(R.id.textView7);
         profileImg = findViewById(R.id.profileImg);
+        parenttv = findViewById(R.id.textView8);
 
         Intent intent = getIntent();
 
@@ -60,7 +61,11 @@ public class student_info extends AppCompatActivity {
                     phonetv.setText(String.valueOf(phone));
                     Long sem = documentSnapshot.getLong("sem");
                     semtv.setText(String.valueOf(sem));
-/*                    int avatarResourceId = documentSnapshot.getString("dob");
+                    Long parent = documentSnapshot.getLong("parent");
+                    parenttv.setText(String.valueOf(parent));
+                    Long avatarResourceIdLong = documentSnapshot.getLong("avatar");
+                    int avatarResourceId = avatarResourceIdLong != null ? avatarResourceIdLong.intValue() : 0;
+
 
                     if (avatarResourceId != 0) {
                         // Check if the resource ID is valid
@@ -70,7 +75,7 @@ public class student_info extends AppCompatActivity {
                         // Handle the case where the resource ID is not found
                         // You may set a default image or take other appropriate action
                         profileImg.setImageResource(R.drawable.default_avatar);
-                    }*/
+                    }
                 }
             }
         });

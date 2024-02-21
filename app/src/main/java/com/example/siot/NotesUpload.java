@@ -40,6 +40,8 @@ public class NotesUpload extends AppCompatActivity {
     TextView notifcation;
     String selectedBranch,selectedSem;
     Uri pdfUri;
+    String mainFolder = new String();
+    String subFolder = new String();
 
     FirebaseStorage storage; //used to upload the files
     FirebaseDatabase database; //used to store the URL of files uploaded
@@ -160,8 +162,7 @@ public class NotesUpload extends AppCompatActivity {
 
     private void uploadFile(Uri pdfUri)
     {
-        String mainFolder = new String();
-        String subFolder = new String();
+
         final String FileName=System.currentTimeMillis()+".pdf";
         final String FileName1=System.currentTimeMillis()+"";
 
@@ -299,27 +300,31 @@ public class NotesUpload extends AppCompatActivity {
         reference.child(mainFolder).child(subFolder).child(FileName).putFile(pdfUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                String url=taskSnapshot.getUploadSessionUri().toString();
-
-                DatabaseReference reference1=database.getReference();
-                reference1.child(FileName1).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                // Get the download URL
+                Task<Uri> downloadUrlTask = taskSnapshot.getStorage().getDownloadUrl();
+                downloadUrlTask.addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful())
-                        {
-                            Toast.makeText(NotesUpload.this,"File Uploaded Successfully",Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            Toast.makeText(NotesUpload.this,"File Upload Failed",Toast.LENGTH_SHORT).show();
-                        }
+                    public void onSuccess(Uri uri) {
+                        String url = uri.toString();
+
+                        DatabaseReference reference1 = database.getReference(mainFolder).child(subFolder).child(FileName1);
+                        reference1.setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(NotesUpload.this, "File Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(NotesUpload.this, "File Upload Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }
                 });
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(NotesUpload.this,"File Upload Failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(NotesUpload.this, "File Upload Failed", Toast.LENGTH_SHORT).show();
             }
         });
     }

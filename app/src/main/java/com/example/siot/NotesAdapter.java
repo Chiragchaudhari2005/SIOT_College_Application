@@ -83,11 +83,26 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         }
 
         void setFolders(){
-            if("CO".equals(branch) && "SEM1".equals(sem)){
+            if ("CO".equals(branch) && "SEM1".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem1";
+            } else if ("CO".equals(branch) && "SEM2".equals(sem)) {
+                mainFolder = "COMP_ENGG";
+                subFolder = "sem2";
             }
-            else if("CO".equals(branch) && "SEM6".equals(sem)){
+            else if ("CO".equals(branch) && "SEM3".equals(sem)) {
+                mainFolder = "COMP_ENGG";
+                subFolder = "sem3";
+            }
+            else if ("CO".equals(branch) && "SEM4".equals(sem)) {
+                mainFolder = "COMP_ENGG";
+                subFolder = "sem4";
+            }
+            else if ("CO".equals(branch) && "SEM5".equals(sem)) {
+                mainFolder = "COMP_ENGG";
+                subFolder = "sem5";
+            }
+            else if ("CO".equals(branch) && "SEM6".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem6";
             }

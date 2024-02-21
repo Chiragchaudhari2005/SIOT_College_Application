@@ -59,17 +59,17 @@ public class settings extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_AVATAR_SELECTION && resultCode == RESULT_OK) {
-            // Handle the selected avatar name
-            String selectedAvatar = data.getStringExtra("selectedAvatar");
+            // Handle the selected avatar resource ID
+            int selectedImageResourceId = data.getIntExtra("selectedImageResourceId", 0);
 
-            // Do something with the selected avatar name (e.g., update UI or save it)
-            Toast.makeText(this, "Selected Avatar: " + selectedAvatar, Toast.LENGTH_SHORT).show();
+            // Do something with the selected avatar resource ID (e.g., update UI or save it)
+            //Toast.makeText(this, "Selected Avatar Resource ID: " + selectedImageResourceId, Toast.LENGTH_SHORT).show();
 
-            updateAvatarInFirestore(selectedAvatar);
+            updateAvatarInFirestore(selectedImageResourceId);
         }
     }
 
-    private void updateAvatarInFirestore(String selectedAvatar) {
+    private void updateAvatarInFirestore(int selectedImageResourceId) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             String userId = auth.getCurrentUser().getUid();
@@ -77,7 +77,7 @@ public class settings extends AppCompatActivity {
             // Assuming "users" is the collection name in Firestore
             // Replace "avatar" with the actual field name in your user document
             FirebaseFirestore.getInstance().collection("TYCO").document(userId)
-                    .update("avatar", selectedAvatar)
+                    .update("avatar", selectedImageResourceId)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -93,6 +93,5 @@ public class settings extends AppCompatActivity {
                         }
                     });
         }
-
     }
 }

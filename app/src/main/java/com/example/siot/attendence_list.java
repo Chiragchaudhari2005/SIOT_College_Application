@@ -180,6 +180,7 @@ public class attendence_list extends AppCompatActivity implements OnDataChangedL
         data.put("date", currentDate);
         data.put("day", currentDay);
         data.put("time", currentTime);
+        data.put("subject",subject);
 
         for (ArrayList<String> item : updatedAttendenceList) {
             String studentName = item.get(0);

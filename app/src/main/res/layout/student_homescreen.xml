@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Student info"
+                    android:text="Profile"
                     android:textSize="20sp" />
             </LinearLayout>
 

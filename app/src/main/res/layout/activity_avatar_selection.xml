@@ -18,16 +18,16 @@ android:background="@color/dark_cyan">
         <GridView
             android:id="@+id/gridView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="164dp"
-            android:background="@drawable/button_bg"
-            android:columnWidth="100dp"
+            android:background="@color/dark_cyan"
+            android:columnWidth="150dp"
             android:gravity="center"
-            android:horizontalSpacing="5dp"
-            android:numColumns="auto_fit"
+            android:horizontalSpacing="20dp"
+            android:numColumns="2"
             android:padding="10dp"
-            android:verticalSpacing="5dp" />
+            android:verticalSpacing="60dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

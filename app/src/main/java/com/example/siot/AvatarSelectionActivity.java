@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AvatarSelectionActivity extends AppCompatActivity {
 
     private GridView gridView;
-    private final String[] avatarImages = {"profileimg", "person", "profileimg", "profileimg", "profileimg", "profileimg", "profileimg", "profileimg", "profileimg"};
+    private final String[] avatarImages = {"avatar1", "avatar2","avatar3", "avatar4","avatar5", "avatar6","avatar7", "avatar8",};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +25,11 @@ public class AvatarSelectionActivity extends AppCompatActivity {
         gridView.setAdapter(new AvatarAdapter());
 
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            // Return the selected avatar name to the SettingsActivity
-            String selectedAvatar = avatarImages[position];
+            // Return the selected avatar resource ID to the SettingsActivity
+            int selectedImageResourceId = getResources().getIdentifier(avatarImages[position], "drawable", getPackageName());
 
-            // Pass the selected avatar name directly
-            setResult(RESULT_OK, getIntent().putExtra("selectedAvatar", selectedAvatar));
+            // Pass the selected avatar resource ID directly
+            setResult(RESULT_OK, getIntent().putExtra("selectedImageResourceId", selectedImageResourceId));
             finish();
         });
 
@@ -71,7 +71,7 @@ public class AvatarSelectionActivity extends AppCompatActivity {
             } else {
                 // Handle the case where the resource ID is not found
                 // You may set a default image or take other appropriate action
-                imageView.setImageResource(R.drawable.profileimg);
+                imageView.setImageResource(R.drawable.default_avatar);
             }
 
             return imageView;
