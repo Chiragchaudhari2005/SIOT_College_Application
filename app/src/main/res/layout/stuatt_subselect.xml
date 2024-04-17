@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_cyan">
+    android:background="@color/white_bg">
 
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:src="@drawable/attendence_img" />
+            android:src="@drawable/attendence_og" />
     </LinearLayout>
 
     <LinearLayout
@@ -32,7 +32,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
+        android:padding="10dp"
         android:orientation="vertical"
+        android:background="@drawable/button_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +64,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -88,9 +91,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:hint="SELECT"
                 android:inputType="date"
                 android:gravity="center"
                 android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="20sp"/>
 
 
@@ -116,14 +121,16 @@
                 android:text="Subject"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/subjectBtn"
+            <EditText
+                android:id="@+id/subEdtTxt"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg_og"
-                android:text="SELECT"
-                android:textSize="18sp" />
+                android:hint="SELECT"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="20sp" />
 
 
         </LinearLayout>

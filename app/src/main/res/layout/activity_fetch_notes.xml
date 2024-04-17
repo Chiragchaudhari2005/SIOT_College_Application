@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0496a6"
+    android:background="@color/white_bg"
     tools:context=".FetchNotes">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:src="@drawable/notes_250_250" />
+            android:src="@drawable/notes_og" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,6 +35,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="40dp"
         android:orientation="vertical"
+        android:background="@drawable/button_bg"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,14 +57,18 @@
                 android:text="Branch"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/branchBtnnotesget"
+            <EditText
+                android:id="@+id/branchEdtTxt"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg_og"
-                android:text="Select branch"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:hint="SELECT"
+                android:inputType="date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"/>
 
 
         </LinearLayout>
@@ -83,14 +89,18 @@
                 android:text="Semester"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/semBtnnotesget"
+            <EditText
+                android:id="@+id/semEdtTxt"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg_og"
-                android:text="SELECT SEMESTER"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:hint="SELECT"
+                android:inputType="date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"/>
 
 
         </LinearLayout>

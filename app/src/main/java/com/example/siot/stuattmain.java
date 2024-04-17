@@ -105,6 +105,12 @@ public class stuattmain extends AppCompatActivity {
                     adapter.setTimeList(timeList);
                     adapter.setStatusList(statusList);
                     adapter.notifyDataSetChanged();
+
+                    if (subjectsList.isEmpty()) {
+                        // Show "No Data for the day" message
+                        Toast.makeText(stuattmain.this, "No Data for the day!", Toast.LENGTH_SHORT).show();
+                    }
+
                 } else {
                     String errorMessage = "Error retrieving data: " + task.getException().getMessage();
                     Toast.makeText(stuattmain.this, errorMessage, Toast.LENGTH_SHORT).show();

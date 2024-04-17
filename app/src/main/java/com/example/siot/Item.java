@@ -1,20 +1,37 @@
 package com.example.siot;
 
 public class Item {
-    String bname;
+    String name,author,sem;
     int image;
 
-    public Item(String bname) {
-        this.bname = bname;
+    public Item(String name, String author, String sem, int image) {
+        this.name = name;
+        this.author = author;
+        this.sem = sem;
         this.image = image;
     }
 
-    public String getBname() {
-        return bname;
+    public String getName() {
+        return name;
     }
 
-    public void setBname(String bname) {
-        this.bname = bname;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    public String getSem() {
+        return sem;
+    }
+
+    public void setSem(String sem) {
+        this.sem = sem;
     }
 
     public int getImage() {

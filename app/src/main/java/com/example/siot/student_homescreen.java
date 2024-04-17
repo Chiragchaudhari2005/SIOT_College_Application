@@ -3,6 +3,8 @@ package com.example.siot;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +30,10 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
     private ImageButton notesBtn;
     private GestureDetector gestureDetector;
     private String name,branch,bloodgroup,dob;
-    private Long enrollment,phone;
+    private Long enrollment,phone,parent,sem,avatarResourceIdLong;
+    private int avatarResourceId;
+    Boolean found = false;
+    String collectionName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,42 +47,225 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         libraryBtn = findViewById(R.id.libraryBtn);
         attendenceBtn = findViewById(R.id.attendenceBtn);
         notesBtn = findViewById(R.id.notesBtn);
-        settingBtn = findViewById(R.id.settingBtn);
+
+
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
         String uid = currentUser.getUid();
 
-        //Code to retrieve data from firebase for particular user
-        DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYCO").document(uid);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()){
-                    DocumentSnapshot documentSnapshot = task.getResult();
-                    name = documentSnapshot.getString("name");
-                    enrollment = documentSnapshot.getLong("enrollment");
-                    branch = documentSnapshot.getString("branch");
-                    bloodgroup = documentSnapshot.getString("bloodgroup");
-                    dob = documentSnapshot.getString("DOB");
-                    phone = documentSnapshot.getLong("phone");
+
+
+        getData(uid);
+
+
+    }
+
+
+    public void getData(String uid){
+
+        if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYCO").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName = "TYCO";
+                        setupClickListeners();
+                    }
                 }
-            }
-        });
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("SYCO").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="SYCO";
+                        setupClickListeners();
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("FYCO").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="FYCO";
+                        setupClickListeners();
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYIF").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="TYIF";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("SYIF").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="SYIF";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("FYIF").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="FYIF";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYME").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="TYME";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("SYME").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="SYME";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("FYME").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="FYME";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYCE").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="TYCE";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("SYCE").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="SYCE";
+                    }
+                }
+            });
+        }
+        else if(found == false){
+            //Code to retrieve data from firebase for particular user
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("FYCE").document(uid);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        name = documentSnapshot.getString("name");
+                        found = true;
+                        collectionName="FYCE";
+                    }
+                }
+            });
+        }
+    }
 
-
+    private void setupClickListeners() {
         studInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), student_info.class);
+                intent.putExtra("collectionName", collectionName);
                 startActivity(intent);
             }
         });
 
+        // Similarly, setup other click listeners here
         libraryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), library_record_branches.class);
+                Intent intent = new Intent(v.getContext(), library_selectInfo.class);
                 startActivity(intent);
             }
         });
@@ -84,9 +273,9 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
         attendenceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(student_homescreen.this, "name="+name, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(v.getContext(), stuatt_sub_select.class);
-                intent.putExtra("name",name);
+                intent.putExtra("name", name);
+                intent.putExtra("collectionName", collectionName);
                 startActivity(intent);
             }
         });
@@ -98,15 +287,22 @@ public class student_homescreen extends AppCompatActivity implements GestureDete
                 startActivity(intent);
             }
         });
+    }
 
-        settingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(), settings.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.settings){
+            Intent intent = new Intent(this,settings.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

@@ -83,32 +83,37 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         }
 
         void setFolders(){
-            if ("CO".equals(branch) && "SEM1".equals(sem)) {
+            if ("CO".equals(branch) && "SEM 1".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem1";
-            } else if ("CO".equals(branch) && "SEM2".equals(sem)) {
+            } else if ("CO".equals(branch) && "SEM 2".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem2";
             }
-            else if ("CO".equals(branch) && "SEM3".equals(sem)) {
+            else if ("CO".equals(branch) && "SEM 3".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem3";
             }
-            else if ("CO".equals(branch) && "SEM4".equals(sem)) {
+            else if ("CO".equals(branch) && "SEM 4".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem4";
             }
-            else if ("CO".equals(branch) && "SEM5".equals(sem)) {
+            else if ("CO".equals(branch) && "SEM 5".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem5";
             }
-            else if ("CO".equals(branch) && "SEM6".equals(sem)) {
+            else if ("CO".equals(branch) && "SEM 6".equals(sem)) {
                 mainFolder = "COMP_ENGG";
                 subFolder = "sem6";
             }
         }
 
         private void getFirebaseStorageDownloadUrl(String filename) {
+
+
+
+            //Toast.makeText(context, "b="+branch+"s="+sem, Toast.LENGTH_SHORT).show();
+
             FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference storageRef = storage.getReference();
 

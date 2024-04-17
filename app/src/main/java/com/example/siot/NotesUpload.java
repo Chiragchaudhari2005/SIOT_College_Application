@@ -87,7 +87,7 @@ public class NotesUpload extends AppCompatActivity {
                 }
                 else
                 {
-                   Toast.makeText(NotesUpload.this,"select a file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NotesUpload.this,"select a file",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -130,31 +130,31 @@ public class NotesUpload extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    semBtn.clearFocus();
-                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(NotesUpload.this);
+                semBtn.clearFocus();
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(NotesUpload.this);
 
 
-                    alertDialog.setTitle("Choose branch");
+                alertDialog.setTitle("Choose branch");
 
-                    final String[] listItems = new String[]{"SEM1", "SEM2", "SEM3", "SEM4", "SEM5", "SEM6"};
+                final String[] listItems = new String[]{"SEM1", "SEM2", "SEM3", "SEM4", "SEM5", "SEM6"};
 
-                    alertDialog.setSingleChoiceItems(listItems, checkedItem[0], (dialog, which) -> {
+                alertDialog.setSingleChoiceItems(listItems, checkedItem[0], (dialog, which) -> {
 
-                        checkedItem[0] = which;
+                    checkedItem[0] = which;
 
-                        semBtn.setText(listItems[which]);
-                        selectedSem = listItems[which];
+                    semBtn.setText(listItems[which]);
+                    selectedSem = listItems[which];
 
-                        dialog.dismiss();
-                    });
+                    dialog.dismiss();
+                });
 
-                    alertDialog.setNegativeButton("Cancel", (dialog, which) -> {
+                alertDialog.setNegativeButton("Cancel", (dialog, which) -> {
 
-                    });
+                });
 
-                    AlertDialog customAlertDialog = alertDialog.create();
+                AlertDialog customAlertDialog = alertDialog.create();
 
-                    customAlertDialog.show();
+                customAlertDialog.show();
             }
         });
 
@@ -333,10 +333,10 @@ public class NotesUpload extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         selectPdf();
-       // if (requestCode == 9 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-           // selectPdf();
-       // }// else
-          //  Toast.makeText(NotesUpload.this, "Please Grant The Permission", Toast.LENGTH_SHORT).show();
+        // if (requestCode == 9 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        // selectPdf();
+        // }// else
+        //  Toast.makeText(NotesUpload.this, "Please Grant The Permission", Toast.LENGTH_SHORT).show();
     }
 
     private void selectPdf() {

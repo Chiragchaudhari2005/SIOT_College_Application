@@ -73,12 +73,39 @@ public class attendence_list extends AppCompatActivity implements OnDataChangedL
 
     void setCollectionName(String branch,String sem){
         if ("CO".equals(branch)) {
-            if ("SEMESTER6".equals(sem) || "SEMESTER5".equals(sem)) {
+            if ("SEM 6".equals(sem) || "SEM 5".equals(sem)) {
                 collectionName = "TYCO";
-            } else if ("4SEMESTER".equals(sem) || "SEMESTER3".equals(sem)) {
+            } else if ("SEM 4".equals(sem) || "SEM 3".equals(sem)) {
                 collectionName = "SYCO";
-            } else if ("SEMESTER2".equals(sem) || "SEMESTER1".equals(sem)) {
+            } else if ("SEM 2".equals(sem) || "SEM 1".equals(sem)) {
                 collectionName = "FYCO";
+            }
+        }
+        if ("IF".equals(branch)) {
+            if ("SEM 6".equals(sem) || "SEM 5".equals(sem)) {
+                collectionName = "TYIF";
+            } else if ("SEM 4".equals(sem) || "SEM 3".equals(sem)) {
+                collectionName = "SYIF";
+            } else if ("SEM 2".equals(sem) || "SEM 1".equals(sem)) {
+                collectionName = "FYIF";
+            }
+        }
+        if ("ME".equals(branch)) {
+            if ("SEM 6".equals(sem) || "SEM 5".equals(sem)) {
+                collectionName = "TYME";
+            } else if ("SEM 4".equals(sem) || "SEM 3".equals(sem)) {
+                collectionName = "SYME";
+            } else if ("SEM 2".equals(sem) || "SEM 1".equals(sem)) {
+                collectionName = "FYME";
+            }
+        }
+        if ("AT".equals(branch)) {
+            if ("SEM 6".equals(sem) || "SEM 5".equals(sem)) {
+                collectionName = "TYAT";
+            } else if ("SEM 4".equals(sem) || "SEM 3".equals(sem)) {
+                collectionName = "SYAT";
+            } else if ("SEM 2".equals(sem) || "SEM 1".equals(sem)) {
+                collectionName = "FYAT";
             }
         }
     }
@@ -143,11 +170,11 @@ public class attendence_list extends AppCompatActivity implements OnDataChangedL
 
     String getCollectionName(String branch, String sem){
         if ("CO".equals(branch)) {
-            if ("SEMESTER6".equals(sem) || "SEMESTER5".equals(sem)) {
+            if ("SEM 6".equals(sem) || "SEM 5".equals(sem)) {
                 collectionName = "TYCOATT";
-            } else if ("4SEMESTER".equals(sem) || "SEMESTER3".equals(sem)) {
+            } else if ("SEM 4".equals(sem) || "SEM 3".equals(sem)) {
                 collectionName = "SYCOATT";
-            } else if ("SEMESTER2".equals(sem) || "SEMESTER1".equals(sem)) {
+            } else if ("SEM2".equals(sem) || "SEM 1".equals(sem)) {
                 collectionName = "FYCOATT";
             }
         }

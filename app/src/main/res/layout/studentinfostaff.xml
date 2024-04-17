@@ -4,46 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0496a6">
+    android:background="@color/white_bg">
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearLayout13"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:orientation="vertical"
+        android:background="@drawable/button_bg"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/button_bg"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/textView1"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Branch"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/branchEdtTxt"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="SELECT"
+                android:inputType="date"
                 android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_black"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Semester"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/semEdtTxt"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="SELECT"
+                android:inputType="date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_black"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
                 android:text="Enrollment"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/enrollment_edtxt"
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:inputType="number"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -66,24 +127,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:background="@drawable/button_bg_og"
                 android:gravity="center"
                 android:text="Search"
-                android:background="#9CD3D8"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </LinearLayout>
+
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout13" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -90,7 +90,9 @@
         <activity
             android:name=".NotesRecyclerActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".library_selectInfo"
+            android:exported="false" />
 
         <activity
             android:name=".library_record_branches"

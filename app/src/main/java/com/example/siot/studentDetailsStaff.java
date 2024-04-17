@@ -2,6 +2,7 @@ package com.example.siot;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.TextView;  // Import the TextView class
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class studentDetailsStaff extends AppCompatActivity {
 
-    private TextView nametv, enrollmenttv, branchtv, bloodgrouptv, dobtv, phonetv;
+    private TextView nametv, enrollmenttv, branchtv, bloodgrouptv, dobtv, phonetv,semtv,parenttv;
+    private ImageView profileImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,9 @@ public class studentDetailsStaff extends AppCompatActivity {
         bloodgrouptv = findViewById(R.id.textView4);
         dobtv = findViewById(R.id.textView5);
         phonetv = findViewById(R.id.textView6);
+        semtv = findViewById(R.id.textView7);
+        profileImg = findViewById(R.id.profileImg);
+        parenttv = findViewById(R.id.textView8);
 
         Intent intent = getIntent();
         String documentId = intent.getStringExtra("documentId");
@@ -56,10 +61,24 @@ public class studentDetailsStaff extends AppCompatActivity {
                         branchtv.setText(branch);
                         String bloodgroup = documentSnapshot.getString("bloodgroup");
                         bloodgrouptv.setText(bloodgroup);
-                        String dob = documentSnapshot.getString("DOB");
+                        String dob = documentSnapshot.getString("dob");
                         dobtv.setText(dob);
                         Long phone = documentSnapshot.getLong("phone");
                         phonetv.setText(String.valueOf(phone));
+                        dobtv.setText(dob);
+                        Long sem = documentSnapshot.getLong("sem");
+                        semtv.setText(String.valueOf(sem));
+                        Long parent = documentSnapshot.getLong("parent");
+                        parenttv.setText(String.valueOf(parent));
+                        Long avatarResourceIdLong = documentSnapshot.getLong("avatar");
+                        int avatarResourceId = avatarResourceIdLong != null ? avatarResourceIdLong.intValue() : 0;
+
+                        if (avatarResourceId != 0) {
+                            profileImg.setImageResource(avatarResourceId);
+                        } else {
+                            profileImg.setImageResource(R.drawable.default_avatar);
+                        }
+
                     } else {
                         // Handle the case where the document does not exist
                     }

@@ -31,6 +31,8 @@ public class AvatarSelectionActivity extends AppCompatActivity {
             // Pass the selected avatar resource ID directly
             setResult(RESULT_OK, getIntent().putExtra("selectedImageResourceId", selectedImageResourceId));
             finish();
+
+
         });
 
     }

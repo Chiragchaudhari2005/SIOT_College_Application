@@ -20,7 +20,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private TextView textView2;
     private OnDataChangedListener onDataChangedListener;
     private List<ArrayList<String>> data;
-    private String[] attendenceList;
+    //private String[] attendenceList;
 
     /**
      * Provide a reference to the type of views that you are using
@@ -65,7 +65,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
            // setLayoutColor(ContextCompat.getColor(view.getContext(), R.color.light_green));
             linearLayout.setBackground(ContextCompat.getDrawable(linearLayout.getContext(), R.drawable.list_bg_green));
-                attendenceList = localDataSet;
+                //attendenceList = localDataSet;
 
             switchToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -81,19 +81,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                                 String attendanceStatus = "Absent"; // Set default value
 
                                 // Update the attendanceList
-                                updateAttendanceList(adapterPosition, studentName, attendanceStatus);
+                                updateAttendanceList(adapterPosition, attendanceStatus);
                             }
                         } else {
                             //linearLayout.setBackgroundColor(ContextCompat.getColor(view.getContext(), R.color.light_green));
                             linearLayout.setBackground(ContextCompat.getDrawable(linearLayout.getContext(), R.drawable.list_bg_green));
+                            String attendanceStatus = "Present";
+                            updateAttendanceList(adapterPosition, attendanceStatus);
                         }
                   //  }
                 }
             });
 
         }
-        
-        private void updateAttendanceList(int position, String studentName, String attendanceStatus) {
+
+        private void updateAttendanceList(int position, String attendanceStatus) {
             ArrayList<String> item = data.get(position);
             item.set(1, attendanceStatus);
             notifyDataChanged();
@@ -120,6 +122,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.textView.setText(localDataSet[position]);
+        String attendanceStatus = data.get(position).get(1);
+        holder.switchToggle.setChecked("Absent".equals(attendanceStatus));
     }
 
     // Return the size of your dataset (invoked by the layout manager)

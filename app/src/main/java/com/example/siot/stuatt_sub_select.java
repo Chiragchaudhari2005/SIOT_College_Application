@@ -26,13 +26,13 @@ import java.util.Calendar;
 
 public class stuatt_sub_select extends AppCompatActivity {
     private Button subjectBtn,dateBtn,nextBtn;
-    private String branch,selectedSubject;
+    private String branch,selectedSubject,collectionName;
     private String[] subjectList;
     private long sem=0;
     private TextView semTv;
     final int[] checkedItem = {-1};
     public String selectedDate,name;
-    private EditText dateEdtTxt;
+    private EditText dateEdtTxt,subEdtTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +41,9 @@ public class stuatt_sub_select extends AppCompatActivity {
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
+        collectionName = intent.getStringExtra("collectionName");
 
-        subjectBtn = findViewById(R.id.subjectBtn);
+        subEdtTxt = findViewById(R.id.subEdtTxt);
         nextBtn = findViewById(R.id.nextBtn);
         semTv = findViewById(R.id.semTv);
         dateEdtTxt = findViewById(R.id.dateEdtTxt);
@@ -68,25 +69,61 @@ public class stuatt_sub_select extends AppCompatActivity {
                 showDatePickerDialog();
             }
         });
-        subjectBtn.setOnClickListener(new View.OnClickListener() {
+        subEdtTxt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    // Call the method to show the DatePickerDialog
+                    selectSubject();
+                }
+            }
+        });
+
+        subEdtTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the method to show the DatePickerDialog
+                selectSubject();
+            }
+        });
+/*        subjectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectSubject();
             }
-        });
+        });*/
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if ((selectedDate == null || selectedDate.isEmpty()&&(selectedSubject == null || selectedSubject.isEmpty()))) {
+                    Toast.makeText(stuatt_sub_select.this, "Select Date & Subject", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (selectedDate == null || selectedDate.isEmpty()) {
+                    // Show toast message for not selecting a date
+                    Toast.makeText(stuatt_sub_select.this, "Select Date", Toast.LENGTH_SHORT).show();
+                    return; // Don't proceed further
+                }
+
+                if (selectedSubject == null || selectedSubject.isEmpty()) {
+                    // Show toast message for not selecting a subject
+                    Toast.makeText(stuatt_sub_select.this, "Select Subject", Toast.LENGTH_SHORT).show();
+                    return; // Don't proceed further
+                }
+
+                // Proceed to the next activity
                 Intent intent = new Intent(stuatt_sub_select.this, stuattmain.class);
-                intent.putExtra("name",name);
-                intent.putExtra("branch",branch);
-                intent.putExtra("sem",sem);
-                intent.putExtra("selectedDate",selectedDate);
-                intent.putExtra("selectedSubject",selectedSubject);
+                intent.putExtra("name", name);
+                intent.putExtra("branch", branch);
+                intent.putExtra("sem", sem);
+                intent.putExtra("selectedDate", selectedDate);
+                intent.putExtra("selectedSubject", selectedSubject);
                 startActivity(intent);
             }
         });
+
     }
 
 
@@ -135,9 +172,6 @@ public class stuatt_sub_select extends AppCompatActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
         String uid = currentUser.getUid();
 
-        // Specify the collection name in which the user's data is stored
-        String collectionName = "TYCO"; // Replace with your actual collection name
-
         // Code to retrieve data from the specified collection using the document ID (uid)
         DocumentReference docRef = FirebaseFirestore.getInstance().collection(collectionName).document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -173,8 +207,7 @@ public class stuatt_sub_select extends AppCompatActivity {
         alertDialog.setSingleChoiceItems(subjectList, checkedItem[0], (dialog, which) -> {
             checkedItem[0] = which;
 
-            subjectBtn.setText(subjectList[which]);
-            subjectBtn.setBackground(ContextCompat.getDrawable(subjectBtn.getContext(), R.color.dark_cyan));
+            subEdtTxt.setText(subjectList[which]);
             selectedSubject = subjectList[which];
 
             dialog.dismiss();

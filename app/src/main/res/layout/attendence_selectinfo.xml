@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_cyan">
+    android:background="@color/white_bg">
 
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_weight="1"
-            android:src="@drawable/attendence_img" />
+            android:src="@drawable/attendence_og" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,6 +59,7 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_weight="1"
                 android:text=""
                 android:textColor="@color/black"
@@ -82,14 +83,18 @@
                 android:text="Branch"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/branchBtn"
+            <EditText
+                android:id="@+id/branchEdtTxt"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg_og"
-                android:text="Select branch"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:hint="SELECT"
+                android:inputType="date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"/>
 
 
         </LinearLayout>
@@ -110,14 +115,18 @@
                 android:text="Semester"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/semBtn"
+            <EditText
+                android:id="@+id/semEdtTxt"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg_og"
-                android:text="SELECT SEMESTER"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:hint="SELECT"
+                android:inputType="date"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"/>
 
 
         </LinearLayout>
@@ -138,14 +147,16 @@
                 android:text="Subject"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/subjectBtn"
+            <EditText
+                android:id="@+id/subEdtTxt"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/button_bg_og"
-                android:text="SELECT SUBJECT"
-                android:textSize="18sp" />
+                android:hint="SELECT"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
@@ -163,6 +174,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_bg_og"
                 android:text="Next"
+                android:textColor="@color/white_bg"
                 android:textSize="18sp" />
         </LinearLayout>
 

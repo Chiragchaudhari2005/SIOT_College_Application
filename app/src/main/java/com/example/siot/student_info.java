@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class student_info extends AppCompatActivity {
     private TextView nametv,enrollmenttv,branchtv,bloodgrouptv,dobtv,phonetv,semtv,parenttv;
     private ImageView profileImg;
+    String collectionName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +38,14 @@ public class student_info extends AppCompatActivity {
         parenttv = findViewById(R.id.textView8);
 
         Intent intent = getIntent();
+        collectionName = intent.getStringExtra("collectionName");
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
             String uid = currentUser.getUid();
 
         //Code to retrieve data from firebase for particular user
-        DocumentReference docRef = FirebaseFirestore.getInstance().collection("TYCO").document(uid);
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection(collectionName).document(uid);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -65,7 +69,6 @@ public class student_info extends AppCompatActivity {
                     parenttv.setText(String.valueOf(parent));
                     Long avatarResourceIdLong = documentSnapshot.getLong("avatar");
                     int avatarResourceId = avatarResourceIdLong != null ? avatarResourceIdLong.intValue() : 0;
-
 
                     if (avatarResourceId != 0) {
                         // Check if the resource ID is valid
